@@ -1,12 +1,11 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: nginx-deployment
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 2
   template:
     metadata:
       labels:
@@ -17,7 +16,7 @@ spec:
           image: nginx:alpine
           env:
             - name: MI_VARIABLE
-              value: "ceosmore"
+              value: "cesar"
             - name: MI_OTRA_VARIABLE
               value: "ceosmore2"
             - name: DD_AGENT_HOST
